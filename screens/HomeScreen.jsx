@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { ScrollView, View, ActivityIndicator ,StyleSheet} from "react-native";
 import { mainStyles } from "../utils/theme/styles";
@@ -49,6 +48,13 @@ const options = {
     };
     fetchMovies();
   }, []);
+
+  const getFilteredMovies = (movies) => {
+    return movies.filter(movie => {
+      const matchesSearch = movie.title.toLowerCase().includes(searchQuery.toLowerCase());
+      return matchesSearch; 
+    });
+  };
 
   if (loading) {
     return (

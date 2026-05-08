@@ -22,7 +22,7 @@ export const FavoriteCard = ({ movie, navigation, onRemove }) => {
           source={{ uri: `${IMAGE_BASE}${movie.poster_path}` }}
           style={styles.poster}
         />
-        <div style={styles.info}>
+        <View style={styles.info}>
           <Text numberOfLines={1} style={styles.movieTitle}>
             {movie.title}
           </Text>
@@ -37,7 +37,7 @@ export const FavoriteCard = ({ movie, navigation, onRemove }) => {
             <Play size={10} color="#fff" fill="#fff" />
             <Text style={styles.playText}>Play</Text>
           </View>
-        </div>
+        </View>
       </TouchableOpacity>
 
       <TouchableOpacity onPress={() => onRemove(movie)} style={styles.removeBtn}>
